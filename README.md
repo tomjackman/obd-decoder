@@ -1,4 +1,4 @@
-# obd-decoder
+# OBD-II Decoder
 Decoder for OBD-II (Car Diagnostics) PID's.
 
 OBD-II PIDs (On-board diagnostics Parameter IDs) are codes used to request data from a vehicle, used as a diagnostic tool.
