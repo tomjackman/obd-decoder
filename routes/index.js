@@ -8,7 +8,3 @@ exports.hexToDecimal = function(hexString)
 {
   return parseInt(hexString, 16);
 }
-
-
-
-};
