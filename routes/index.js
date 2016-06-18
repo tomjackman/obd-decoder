@@ -45,3 +45,9 @@ exports.getParameterID = function(hexString)
     };
   }
 }
+
+exports.decodeCalculatedEngineLoad = function(data)
+{
+  var A = exports.hexToDecimal(data);
+  return ((100/255) * A)
+}
