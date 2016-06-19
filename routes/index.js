@@ -46,8 +46,22 @@ exports.getParameterID = function(hexString)
   }
 }
 
+/*
+  Decodes the calculcated engine load data value.
+  @param data {String} The PID data to decode.
+*/
 exports.decodeCalculatedEngineLoad = function(data)
 {
   var A = exports.hexToDecimal(data);
-  return ((100/255) * A)
+  return ((100/255) * A);
+}
+
+/*
+  Decodes the temperature data value for a number of PID's.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeTemperature = function(data)
+{
+  var A = exports.hexToDecimal(data);
+  return (A - 40);
 }
