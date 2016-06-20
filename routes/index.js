@@ -65,3 +65,13 @@ exports.decodeTemperature = function(data)
   var A = exports.hexToDecimal(data);
   return (A - 40);
 }
+
+/*
+  Decodes the short term fuel trim data value for a number of PID's.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeShortTermFuelTrim = function(data)
+{
+  var A = exports.hexToDecimal(data);
+  return ((100/128)*A-100);
+}
