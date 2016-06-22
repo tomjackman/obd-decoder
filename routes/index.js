@@ -95,3 +95,15 @@ exports.decodeIntakeManifoldAbsolutePressure = function(data)
   var a = exports.hexToDecimal(data);
   return a;
 }
+
+/*
+  Decodes the engine rpm data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeEngineRPM = function(data)
+{
+  // recover byte a and byte b from hex data
+  var a = exports.hexToDecimal(data);
+  var b = exports.hexToDecimal(data);
+  return ((256*a)+b)/4;
+}
