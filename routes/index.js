@@ -52,8 +52,8 @@ exports.getParameterID = function(hexString)
 */
 exports.decodeCalculatedEngineLoad = function(data)
 {
-  var A = exports.hexToDecimal(data);
-  return ((100/255) * A);
+  var a = exports.hexToDecimal(data);
+  return ((100/255) * a);
 }
 
 /*
@@ -62,8 +62,8 @@ exports.decodeCalculatedEngineLoad = function(data)
 */
 exports.decodeTemperature = function(data)
 {
-  var A = exports.hexToDecimal(data);
-  return (A - 40);
+  var a = exports.hexToDecimal(data);
+  return (a - 40);
 }
 
 /*
@@ -72,16 +72,26 @@ exports.decodeTemperature = function(data)
 */
 exports.decodeShortTermFuelTrim = function(data)
 {
-  var A = exports.hexToDecimal(data);
-  return ((100/128)*A-100);
+  var a = exports.hexToDecimal(data);
+  return ((100/128)*a-100);
 }
 
 /*
-  Decodes the fuel pressure data value for a number of PID's.
+  Decodes the fuel pressure data value.
   @param data {String} The PID data to decode.
 */
 exports.decodeFuelPressure = function(data)
 {
-  var A = exports.hexToDecimal(data);
-  return (3*A);
+  var a = exports.hexToDecimal(data);
+  return (3*a);
+}
+
+/*
+  Decodes the intake manifold absolute pressure data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeIntakeManifoldAbsolutePressure = function(data)
+{
+  var a = exports.hexToDecimal(data);
+  return a;
 }
