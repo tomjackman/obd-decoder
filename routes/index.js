@@ -75,3 +75,13 @@ exports.decodeShortTermFuelTrim = function(data)
   var A = exports.hexToDecimal(data);
   return ((100/128)*A-100);
 }
+
+/*
+  Decodes the fuel pressure data value for a number of PID's.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeFuelPressure = function(data)
+{
+  var A = exports.hexToDecimal(data);
+  return (3*A);
+}
