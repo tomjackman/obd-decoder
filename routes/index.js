@@ -107,3 +107,13 @@ exports.decodeEngineRPM = function(data)
   var b = exports.hexToDecimal(data);
   return ((256*a)+b)/4;
 }
+
+/*
+  Decodes the vehicle speed data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeVehicleSpeed = function(data)
+{
+  var a = exports.hexToDecimal(data);
+  return a;
+}
