@@ -117,3 +117,13 @@ exports.decodeVehicleSpeed = function(data)
   var a = exports.hexToDecimal(data);
   return a;
 }
+
+/*
+  Decodes the timing advance data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeTimingAdvance = function(data)
+{
+  var a = exports.hexToDecimal(data);
+  return ((a/2)-64);
+}
