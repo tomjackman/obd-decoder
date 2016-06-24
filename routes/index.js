@@ -149,3 +149,14 @@ exports.decodeThrottlePosition = function(data)
   var a = exports.hexToDecimal(data);
   return ((100/255)*A);
 }
+
+/*
+  Decodes the oxygen sensor voltage data value for a number of PID's.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeOxygenSensorVoltage = function(data)
+{
+  // TODO recover byte a from hex data
+  var a = exports.hexToDecimal(data);
+  return (a/200);
+}
