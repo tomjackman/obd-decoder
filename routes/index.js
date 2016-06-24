@@ -160,3 +160,15 @@ exports.decodeOxygenSensorVoltage = function(data)
   var a = exports.hexToDecimal(data);
   return (a/200);
 }
+
+
+/*
+  Decodes the oxygen sensor voltage data value for a number of PID's.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeOxygenSensorShortTermFuelTrim = function(data)
+{
+  // TODO recover byte b from hex data
+  var b = exports.hexToDecimal(data);
+  return (((100/128)*b)-100);
+}
