@@ -139,3 +139,13 @@ exports.decodeMafAirFlowRate = function(data)
   var b = exports.hexToDecimal(data);
   return ((256*a)+b)/100;
 }
+
+/*
+  Decodes the throttle position data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeThrottlePosition = function(data)
+{
+  var a = exports.hexToDecimal(data);
+  return ((100/255)*A);
+}
