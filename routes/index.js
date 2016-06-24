@@ -172,3 +172,15 @@ exports.decodeOxygenSensorShortTermFuelTrim = function(data)
   var b = exports.hexToDecimal(data);
   return (((100/128)*b)-100);
 }
+
+/*
+  Decodes the run time since engine start data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeRunTimeSinceEngineStart = function(data)
+{
+  // TODO recover byte a and byte b from hex data
+  var a = exports.hexToDecimal(data);
+  var b = exports.hexToDecimal(data);
+  return (256*a)+b);
+}
