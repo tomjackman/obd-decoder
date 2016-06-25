@@ -1,10 +1,12 @@
 # OBD-II Decoder
 
+A node module that decodes responses from OBD-II vehicle queries.
+
 ![OBD](http://www.totalcardiagnostics.com/images/connectorblue.gif)
 
 Node based Decoder for OBD-II (Car Diagnostics) PID's. OBD-II PIDs (On-board diagnostics Parameter IDs) are codes used to request data from a vehicle, used as a diagnostic tool.
 
-SAE standard J/1939 defines many PIDs, but manufacturers also define many more PIDs specific to their vehicles. All light duty vehicles (i.e. less than 8,500 pounds) sold in North America since 1996, as well as medium duty vehicles (i.e. 8,500-14,000 pounds) beginning in 2005, and heavy duty vehicles (i.e. greater than 14,000 pounds) beginning in 2010,[1] are required to support OBD-II diagnostics, using a standardized data link connector, and a subset of the SAE J/1979 defined PIDs (or SAE J/1939 as applicable for medium/heavy duty vehicles), primarily for state mandated emissions inspections.
+SAE standard J/1939 defines many PIDs, but manufacturers also define many more PIDs specific to their vehicles. All light duty vehicles sold in North America since 1996, as well as medium duty vehicles beginning in 2005, and heavy duty vehicles beginning in 2010, are required to support OBD-II diagnostics, using a standardized data link connector, and a subset of the SAE J/1979 defined PIDs (or SAE J/1939 as applicable for medium/heavy duty vehicles), primarily for state mandated emissions inspections.
 
 There are 10 modes of operation described in the latest OBD-II standard SAE J1979. They are as follows:
 
