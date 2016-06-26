@@ -21,3 +21,4 @@ Mode (hex)	Description
 * 08	Control operation of on-board component/system
 * 09	Request vehicle information
 * 0A	Permanent Diagnostic Trouble Codes (DTCs) (Cleared DTCs)
+* 
