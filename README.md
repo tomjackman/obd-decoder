@@ -13,9 +13,13 @@ There are 2 modes of operation described in the latest OBD-II standard SAE J1979
 Mode  Description
 * 01	Show current data
 * 03	Show stored Diagnostic Trouble Codes
-* 
 
-## hexToDecimal(hexString)
-* @param hexString - the string of hex to decode
-* This method decodes a string of hex into decimal format.
-* Example - 
+## Methods
+
+### hexToDecimal(hexString)
+This method decodes a string of hex into decimal format.
+
+#### Parameters
+* hexString - the string of hex to decode
+
+#### Example Usage
