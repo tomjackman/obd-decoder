@@ -53,7 +53,7 @@ exports.getParameterID = function(hexString)
 exports.decodeCalculatedEngineLoad = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return ((100/255) * a);
+  return (100/255) * a;
 }
 
 /*
@@ -63,7 +63,7 @@ exports.decodeCalculatedEngineLoad = function(data)
 exports.decodeTemperature = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return (a - 40);
+  return a - 40;
 }
 
 /*
@@ -73,7 +73,7 @@ exports.decodeTemperature = function(data)
 exports.decodeShortTermFuelTrim = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return ((100/128)*a-100);
+  return (100/128)*a-100;
 }
 
 /*
@@ -83,7 +83,7 @@ exports.decodeShortTermFuelTrim = function(data)
 exports.decodeFuelPressure = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return (3*a);
+  return 3*a;
 }
 
 /*
@@ -125,7 +125,7 @@ exports.decodeVehicleSpeed = function(data)
 exports.decodeTimingAdvance = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return ((a/2)-64);
+  return (a/2)-64;
 }
 
 /*
@@ -147,7 +147,7 @@ exports.decodeMafAirFlowRate = function(data)
 exports.decodeThrottlePosition = function(data)
 {
   var a = exports.hexToDecimal(data);
-  return ((100/255)*A);
+  return (100/255)*a;
 }
 
 /*
@@ -158,7 +158,7 @@ exports.decodeOxygenSensorVoltage = function(data)
 {
   // TODO recover byte a from hex data
   var a = exports.hexToDecimal(data);
-  return (a/200);
+  return a/200;
 }
 
 
@@ -170,7 +170,7 @@ exports.decodeOxygenSensorShortTermFuelTrim = function(data)
 {
   // TODO recover byte b from hex data
   var b = exports.hexToDecimal(data);
-  return (((100/128)*b)-100);
+  return ((100/128)*b)-100;
 }
 
 /*
@@ -182,17 +182,41 @@ exports.decodeRunTimeSinceEngineStart = function(data)
   // TODO recover byte a and byte b from hex data
   var a = exports.hexToDecimal(data);
   var b = exports.hexToDecimal(data);
-  return (256*a)+b);
+  return (256*a)+b;
 }
 
 /*
   Decodes the distance traveled with malfunction indicator lamp (MIL) on data value.
   @param data {String} The PID data to decode.
 */
-exports.distanceTravelledMilOn = function(data)
+exports.decodeDistanceTravelledMilOn = function(data)
 {
   // TODO recover byte a and byte b from hex data
   var a = exports.hexToDecimal(data);
   var b = exports.hexToDecimal(data);
-  return (256*a)+b);
+  return (256*a)+b;
+}
+
+/*
+  Decodes the distance traveled with malfunction indicator lamp (MIL) on data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeFuelRailPressure = function(data)
+{
+  // TODO recover byte a and byte b from hex data
+  var a = exports.hexToDecimal(data);
+  var b = exports.hexToDecimal(data);
+  return (0.079*(256*a)+b);
+}
+
+/*
+  Decodes the distance traveled with malfunction indicator lamp (MIL) on data value.
+  @param data {String} The PID data to decode.
+*/
+exports.decodeFuelRailGaugePressure = function(data)
+{
+  // TODO recover byte a and byte b from hex data
+  var a = exports.hexToDecimal(data);
+  var b = exports.hexToDecimal(data);
+  return 10*(256*a+b);
 }
