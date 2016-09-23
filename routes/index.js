@@ -110,9 +110,8 @@ exports.decodeIntakeManifoldAbsolutePressure = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeEngineRPM = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return ((256*a)+b)/4;
 };
 
@@ -139,9 +138,8 @@ exports.decodeTimingAdvance = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeMafAirFlowRate = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return ((256*a)+b)/100;
 };
 
@@ -159,8 +157,7 @@ exports.decodeThrottlePosition = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeOxygenSensorVoltage = function(data) {
-  // TODO recover byte a from hex data
-  var a = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
   return a/200;
 };
 
@@ -170,8 +167,8 @@ exports.decodeOxygenSensorVoltage = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeOxygenSensorShortTermFuelTrim = function(data) {
-  // TODO recover byte b from hex data
-  var b = exports.hexToDecimal(data);
+
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return ((100/128)*b)-100;
 };
 
@@ -180,9 +177,8 @@ exports.decodeOxygenSensorShortTermFuelTrim = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeRunTimeSinceEngineStart = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return (256*a)+b;
 };
 
@@ -191,9 +187,8 @@ exports.decodeRunTimeSinceEngineStart = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeDistanceTravelledMilOn = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return (256*a)+b;
 };
 
@@ -202,9 +197,8 @@ exports.decodeDistanceTravelledMilOn = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeFuelRailPressure = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return (0.079*(256*a)+b);
 };
 
@@ -213,9 +207,8 @@ exports.decodeFuelRailPressure = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeFuelRailGaugePressure = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return 10*(256*a+b);
 };
 
@@ -232,8 +225,7 @@ exports.warmupsSinceCodesCleared = function(data) {
   @param data {String} The PID data to decode.
 */
 exports.decodeDistanceTraveledSinceCodesCleared = function(data) {
-  // TODO recover byte a and byte b from hex data
-  var a = exports.hexToDecimal(data);
-  var b = exports.hexToDecimal(data);
+  var a = exports.getSecondLastDataByte(exports.hexToDecimal(data));
+  var b = exports.getLastDataByte(exports.hexToDecimal(data));
   return (256*a)+b;
 };
