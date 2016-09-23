@@ -1,0 +1,32 @@
+{
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "describe": true,
+    "it": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "array-callback-return": "warn",
+    "brace-style": ["error", "1tbs"],
+    "complexity": ["warn", 20],
+    "eqeqeq": "error",
+    "guard-for-in": "error",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "no-array-constructor": "error",
+    "no-console": "warn",
+    "no-lonely-if": "warn",
+    "no-loop-func": "warn",
+    "no-mixed-spaces-and-tabs": ["error"],
+    "no-nested-ternary": "error",
+    "no-spaced-func": "error",
+    "no-trailing-spaces": "error",
+    "semi": ["error", "always"],
+    "space-before-blocks": "error",
+    "space-before-function-paren": ["error", "never"],
+    "keyword-spacing": ["error"],
+    "curly": ["error", "all"]
+  }
+}
