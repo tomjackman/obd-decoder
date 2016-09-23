@@ -40,3 +40,21 @@ describe('Test hexToDecimal function', function() {
     assert.equal(1090722548, decoder.hexToDecimal(SAMPLE_SPACED_HEX_STRING));
   });
 });
+
+describe('Test decodeCalculatedEngineLoad function', function() {
+  it('should decode the correct engine load value', function() {
+    assert.equal(49.80, decoder.decodeCalculatedEngineLoad("7F"));
+  });
+  it('should decode the correct engine load value', function() {
+    assert.equal(98.04, decoder.decodeCalculatedEngineLoad("fa"));
+  });
+});
+
+describe('Test decodeTemperature function', function() {
+  it('should decode the correct temperature value', function() {
+    assert.equal(73.00, decoder.decodeTemperature("71"));
+  });
+  it('should decode the correct temperature value', function() {
+    assert.equal(46.00, decoder.decodeTemperature("56"));
+  });
+});
