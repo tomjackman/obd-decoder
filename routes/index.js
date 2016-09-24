@@ -20,17 +20,18 @@ function truncate(hexString) {
 }
 
 /*
-  Identifies the parameter id based on the response from the vehicle.
+  Identifies the parameter id based on the response from the vehicle in format 41 04 3C or 41043C.
   @param hexString {String} The response string to try and identify.
 */
 function getParameterID(hexString) {
+  var responseFlag = hexString.substring(0,1);
   hexString = truncate(hexString);
-  var mode = hexString.substring(1);
-  var pid = hexToDecimal(hexString.substring(2,3));
+  var mode = hexString.substring(1,2);
+  var pid = hexToDecimal(hexString.substring(3,4));
 
-  if (mode === 1 || mode === 9) {
+  if ((mode === "1" || mode === "9") && responseFlag === "4") {
     return {"result" : {
-      "status": "valid",
+      "valid": true,
       "pid": PARAMETER_IDS[mode][pid].pid,
       "bytes": PARAMETER_IDS[mode][pid].bytes,
       "description": PARAMETER_IDS[mode][pid].description
@@ -38,7 +39,7 @@ function getParameterID(hexString) {
   };
   } else {
     return { "result" : {
-      "status": "invalid"
+      "valid": false
     }
   };
   }
