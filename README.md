@@ -2,7 +2,7 @@
 
 A node module that decodes responses from OBD-II vehicle queries.
 
-![OBD](http://www.totalcardiagnostics.com/images/connectorblue.gif)
+[![NPM](https://nodei.co/npm/obd-ii-decoder.png)](https://npmjs.org/package/obd-ii-decoder)
 
 NodeJS based Decoder for OBD-II (Car Diagnostics) PID's. OBD-II PIDs (On-board diagnostics Parameter IDs) are codes used to request data from a vehicle, used as a diagnostic tool.
 
