@@ -14,12 +14,27 @@ Mode  Description
 * 01	Show current data
 * 03	Show stored Diagnostic Trouble Codes
 
-## Methods
+## Decoding a Single Vehicle Response
 
-### hexToDecimal(hexString)
-This method decodes a string of hex into decimal format.
+The following methods can be used to decode a single response from the vehicle, where the inut parameter `data` is the data part of the response from the vehicle. Eg.The response 41 0C 23 or 410C23 is in the format MODE-PID-DATA. Passing in the data section for a given PID will decode it sucessfully.
 
-#### Parameters
-* hexString - the string of hex to decode
+* decodeCalculatedEngineLoad(data)
+* decodeTemperature(data)
+* decodeShortTermFuelTrim(data)
+* decodeFuelPressure(data)
+* decodeIntakeManifoldAbsolutePressure(data)
+* decodeEngineRPM(data)
+* decodeVehicleSpeed(data)
+* decodeTimingAdvance(data)
+* decodeMafAirFlowRate(data)
+* decodeThrottlePosition(data)
+* decodeOxygenSensorVoltage(data)
+* decodeOxygenSensorShortTermFuelTrim(data)
+* decodeRunTimeSinceEngineStart(data)
+* decodeDistanceTravelledMilOn(data)
+* decodeFuelRailPressure(data)
+* decodeFuelRailGaugePressure(data)
+* warmupsSinceCodesCleared(data)
+* decodeDistanceTraveledSinceCodesCleared(data)
 
 #### Example Usage
