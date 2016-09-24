@@ -11,7 +11,7 @@ describe('Test getLastByte function', function() {
   it('should get the last byte of the data', function() {
     assert.equal("F7", decoder.getLastDataByte(SAMPLE_HEX_STRING_ONE));
   });
-  it('the data returned should be 1 byte in size', function() {
+  it('should be 1 byte in size', function() {
     assert.equal(2, decoder.getSecondLastDataByte(SAMPLE_HEX_STRING_TWO).length);
   });
 });
@@ -20,8 +20,26 @@ describe('Test getSecondLastByte function', function() {
   it('should get the last byte of the data', function() {
     assert.equal("1A", decoder.getSecondLastDataByte(SAMPLE_HEX_STRING_TWO));
   });
-  it('the data returned should be 1 byte in size', function() {
+  it('should be 1 byte in size', function() {
     assert.equal(2, decoder.getSecondLastDataByte(SAMPLE_HEX_STRING_TWO).length);
+  });
+});
+
+describe('Test getParameterID function', function() {
+  it('should mark the response as valid', function() {
+    assert.equal(true, decoder.getParameterID("41043C").result.valid);
+  });
+  it('should mark the response as invalid', function() {
+    assert.equal(false, decoder.getParameterID("44043C").result.valid);
+  });
+  it('should return the correct pid', function() {
+    assert.equal("04", decoder.getParameterID("41043C").result.pid);
+  });
+  it('should return the correct number of bytes', function() {
+    assert.equal(1, decoder.getParameterID("41043C").result.bytes);
+  });
+  it('should return the correct pid decription', function() {
+    assert.equal("Calculated engine load value", decoder.getParameterID("41043C").result.description);
   });
 });
 
