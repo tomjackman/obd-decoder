@@ -6,3 +6,5 @@ patch:
         patched: '2016-09-24T08:37:31.191Z'
     - jade > constantinople > uglify-js:
         patched: '2016-09-24T08:37:31.191Z'
+    - jade > transformers > uglify-js:
+        patched: '2016-09-30T15:21:43.980Z'

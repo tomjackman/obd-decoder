@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "private": false,
   "scripts": {
-    "start": "nodejs ./bin/www"
+    "start": "nodejs ./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "express": "~4.14.0",
@@ -12,9 +14,11 @@
     "cookie-parser": "1.4.3",
     "body-parser": "~1.15.2",
     "debug": "~2.2.0",
-    "jade": "~1.11.0"
+    "jade": "~1.11.0",
+    "snyk": "^1.19.1"
   },
   "devDependencies": {
     "mocha": "^3.0.2"
-  }
+  },
+  "snyk": true
 }
