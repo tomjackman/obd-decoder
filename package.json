@@ -8,11 +8,11 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "express": "~4.14.0",
+    "express": "~4.15.2",
     "static-favicon": "~1.0.0",
     "morgan": "~1.7.0",
     "cookie-parser": "1.4.3",
-    "body-parser": "~1.15.2",
+    "body-parser": "~1.17.1",
     "debug": "~2.2.0",
     "jade": "~1.11.0",
     "snyk": "^1.19.1"
